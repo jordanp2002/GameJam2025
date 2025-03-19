@@ -154,6 +154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: destroyer01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aaa1f71d994dacf42a48fb0fc8aee0aa, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: aaa1f71d994dacf42a48fb0fc8aee0aa, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.04

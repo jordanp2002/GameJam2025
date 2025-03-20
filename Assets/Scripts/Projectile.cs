@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
             Debug.Log("Hit an enemy!");
         }
 
-        Health targetHealth = other.GetComponentInParent<Health>();
+        IHealth targetHealth = other.GetComponentInParent<IHealth>();
 
         if (targetHealth != null)
         {

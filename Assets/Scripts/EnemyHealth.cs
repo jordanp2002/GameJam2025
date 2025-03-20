@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Health : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IHealth
 {
     public float maxHealth = 100f;
     private float currentHealth;

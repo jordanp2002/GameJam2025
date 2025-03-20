@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 839865328937378197}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,6 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7489687537221510918}
   - component: {fileID: 2595505890375124272}
+  - component: {fileID: 9041024378958114948}
   m_Layer: 0
   m_Name: EnemyDestroyer
   m_TagString: Untagged
@@ -85,6 +86,7 @@ Transform:
   m_Children:
   - {fileID: 7424715483509428884}
   - {fileID: 2861761211490851528}
+  - {fileID: 6530039753926669415}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2595505890375124272
@@ -100,6 +102,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+--- !u!114 &9041024378958114948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410700306016654366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94ebae4824ea254ba56b557dfbf9e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 8328094409988945669, guid: 92afadae8f53a9c41a4159549227c730, type: 3}
+  firePoint: {fileID: 6530039753926669415}
+  fireRate: 2
+  spreadAngle: 15
+  projectileSpeed: 10
+--- !u!1 &7604279763643284659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6530039753926669415}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6530039753926669415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7604279763643284659}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.123, y: 0.216, z: 5.03}
+  m_LocalScale: {x: 2.1699977, y: 2.1699977, z: 2.1699977}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7489687537221510918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2323221708076104995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -170,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aaa1f71d994dacf42a48fb0fc8aee0aa, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: aaa1f71d994dacf42a48fb0fc8aee0aa, type: 3}
       propertyPath: m_LocalPosition.z

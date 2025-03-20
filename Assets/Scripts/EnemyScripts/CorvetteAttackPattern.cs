@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CorvetteAttack : MonoBehaviour
+public class CorvetteAttackPattern : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Transform firePoint;

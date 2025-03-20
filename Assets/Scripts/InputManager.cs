@@ -4,7 +4,6 @@ public class InputManager : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Transform spawnPoint;
-    public float projectileSpeed = 10f;
 
     void Update()
     {
@@ -16,16 +15,13 @@ public class InputManager : MonoBehaviour
 
     void SpawnProjectile()
     {
-        GameObject projectile = Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        if (rb != null)
+        if (projectilePrefab != null && spawnPoint != null)
         {
-            rb.linearVelocity = spawnPoint.forward * projectileSpeed;
-            Debug.Log("Projectile velocity set to: " + rb.linearVelocity);
+            Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
         }
         else
         {
-            Debug.LogError("Projectile prefab is missing a Rigidbody!");
+            Debug.LogError("Projectile prefab or spawn point is missing!");
         }
     }
 }

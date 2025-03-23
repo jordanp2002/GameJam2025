@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class DragonController : MonoBehaviour
 {
-    [Header("Movement Settings")]
+
     [SerializeField] private float forwardSpeed = 5f;
     [SerializeField] private float horizontalSpeed = 10f;
     [SerializeField] private float fixedHeight = 1f;
 
-    [Header("Dash Settings")]
     [SerializeField] private float dashDistance = 5f;
     [SerializeField] private float dashCooldown = 5f;
 

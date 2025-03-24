@@ -9,22 +9,29 @@ public class CorvetteAttackPattern : MonoBehaviour
     private Transform player;
     private float nextFireTime = 0f;
 
+    private Renderer rend;
+
+
     void Start()
     {
+        rend = GetComponentInChildren<Renderer>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
     void Update()
     {
-        if (player != null)
+        if (rend != null && rend.isVisible)
         {
-            transform.LookAt(player.position);
-        }
+            if (player != null)
+            {
+                transform.LookAt(player.position);
+            }
 
-        if (Time.time >= nextFireTime)
-        {
-            Shoot();
-            nextFireTime = Time.time + fireRate;
+            if (Time.time >= nextFireTime)
+            {
+                Shoot();
+                nextFireTime = Time.time + fireRate;
+            }
         }
     }
 

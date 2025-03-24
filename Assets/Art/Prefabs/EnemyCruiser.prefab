@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.8199997, y: 0.1170001, z: 4.096}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.254271, y: 1, z: 1.609304}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6849927112480060908}
@@ -132,7 +132,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8328094409988945669, guid: 21c12328b428c8643b00fcd4140662bd, type: 3}
   firePoint1: {fileID: 1198212908711842238}
   firePoint2: {fileID: 4657202751467026380}
-  fireRate: 1
+  fireRate: 2
   projectileSpeed: 10
 --- !u!1 &7267291484500130535
 GameObject:
@@ -162,7 +162,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.90999985, y: 0.1170001, z: 4.096}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0563952, y: 1, z: 1.6231427}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6849927112480060908}

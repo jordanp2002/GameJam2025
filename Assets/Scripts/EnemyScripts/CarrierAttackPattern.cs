@@ -11,12 +11,20 @@ public class CarrierAttackPattern : MonoBehaviour
     public float laserDamage = 10f;
     private float nextFireTime = 0f;
 
+    private Renderer rend;
+    void Start()
+    {
+        rend = GetComponentInChildren<Renderer>();
+    }
     void Update()
     {
-        if (Time.time >= nextFireTime)
+        if (rend != null && rend.isVisible)
         {
-            StartCoroutine(FireLaser());
-            nextFireTime = Time.time + fireRate;
+            if (Time.time >= nextFireTime)
+            {
+                FireLaser();
+                nextFireTime = Time.time + fireRate;
+            }
         }
     }
 

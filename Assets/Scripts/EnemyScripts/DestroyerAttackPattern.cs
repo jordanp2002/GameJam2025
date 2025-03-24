@@ -9,12 +9,21 @@ public class DestroyerAttackPattern : MonoBehaviour
     public float projectileSpeed = 10f;
     private float nextFireTime = 0f;
 
+    private Renderer rend;
+
+    void Start()
+    {
+ 
+        rend = GetComponentInChildren<Renderer>();
+    }
     void Update()
     {
-        if (Time.time >= nextFireTime)
-        {
-            ShootSpread();
-            nextFireTime = Time.time + fireRate;
+        if (rend != null && rend.isVisible) { 
+            if (Time.time >= nextFireTime)
+            {
+                ShootSpread();
+                nextFireTime = Time.time + fireRate;
+            }
         }
     }
 

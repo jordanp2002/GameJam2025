@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.3800004, z: 2.94}
-  m_LocalScale: {x: 1.76344, y: 1.2218276, z: 1.5745}
+  m_LocalScale: {x: 2.7109363, y: 1.2218276, z: 2.6662583}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7489687537221510918}
@@ -81,7 +81,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 0.46083, y: 0.46083, z: 0.46083}
+  m_LocalScale: {x: 0.46083, y: 0.46083, z: 0.49000055}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7424715483509428884}
@@ -117,8 +117,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8328094409988945669, guid: 92afadae8f53a9c41a4159549227c730, type: 3}
   firePoint: {fileID: 6530039753926669415}
   fireRate: 2
-  spreadAngle: 15
-  projectileSpeed: 10
+  spreadAngle: 10
+  projectileSpeed: 4
 --- !u!1 &7604279763643284659
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,13 +8,22 @@ public class CruiserAttackPattern : MonoBehaviour
     public float fireRate = 1f;
     public float projectileSpeed = 10f;
     private float nextFireTime = 0f;
+    private Renderer rend;
+
+    void Start()
+    {
+        rend = GetComponentInChildren<Renderer>();
+    }
 
     void Update()
     {
-        if (Time.time >= nextFireTime)
+        if (rend != null && rend.isVisible)
         {
-            Shoot();
-            nextFireTime = Time.time + fireRate;
+            if (Time.time >= nextFireTime)
+            {
+                Shoot();
+                nextFireTime = Time.time + fireRate;
+            }
         }
     }
 

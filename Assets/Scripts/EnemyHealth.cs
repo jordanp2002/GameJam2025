@@ -9,7 +9,9 @@ public class EnemyHealth : MonoBehaviour, IHealth
     private Color originalColor;
 
     void Start()
+
     {
+        GameManager.Instance?.RegisterEnemy();
         currentHealth = maxHealth;
         enemyRenderer = GetComponentInChildren<Renderer>();
         if (enemyRenderer != null)
@@ -44,6 +46,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
     void Die()
     {
         Debug.Log(gameObject.name + " has died!");
+        GameManager.Instance?.EnemyKilled();
         Destroy(gameObject); // Remove later for death animations
     }
 }

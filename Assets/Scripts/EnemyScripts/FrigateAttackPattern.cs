@@ -10,13 +10,22 @@ public class FrigateAttackPattern : MonoBehaviour
     public int burstCount = 3;
     public float projectileSpeed = 10f;
     private float nextFireTime = 0f;
+    private Renderer rend;
+
+    void Start()
+    {
+        rend = GetComponentInChildren<Renderer>();
+    }
 
     void Update()
     {
-        if (Time.time >= nextFireTime)
+        if (rend != null && rend.isVisible)
         {
-            StartCoroutine(FireBurst());
-            nextFireTime = Time.time + fireRate;
+            if (Time.time >= nextFireTime)
+            {
+                StartCoroutine(FireBurst());
+                nextFireTime = Time.time + fireRate;
+            }
         }
     }
 

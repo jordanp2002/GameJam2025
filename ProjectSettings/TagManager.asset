@@ -9,6 +9,7 @@ TagManager:
   - EnemyCruiser
   - EnemyDestroyer
   - EnemyFrigate
+  - Soul
   layers:
   - Default
   - TransparentFX

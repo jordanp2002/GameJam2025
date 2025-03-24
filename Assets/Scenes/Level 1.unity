@@ -390,9 +390,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53783033cd58cf4da05b1f1b8fa1403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1566315026}
-  offset: {x: 0, y: 2, z: -5}
+  target: {fileID: 1923372561}
+  height: 20
   followSpeed: 5
+  fixedX: 0
 --- !u!1 &1254242489
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,9 +644,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54bdd19a61087e458518cb9cbd93cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8328094409988945669, guid: 92afadae8f53a9c41a4159549227c730, type: 3}
-  spawnPoint: {fileID: 1257453776}
-  projectileSpeed: 10
+  forwardSpeed: 5
+  horizontalSpeed: 10
+  fixedHeight: 1
+  dashDistance: 5
+  dashCooldown: 5
 --- !u!1001 &1158534657119825422
 PrefabInstance:
   m_ObjectHideFlags: 0

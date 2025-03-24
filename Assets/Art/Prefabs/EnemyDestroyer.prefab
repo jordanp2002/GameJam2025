@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 9041024378958114948}
   m_Layer: 0
   m_Name: EnemyDestroyer
-  m_TagString: Untagged
+  m_TagString: EnemyDestroyer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  soulPrefab: {fileID: 6031875728269146469, guid: d9e7f85a0eba78647b3c916660ae7eb3, type: 3}
 --- !u!114 &9041024378958114948
 MonoBehaviour:
   m_ObjectHideFlags: 0

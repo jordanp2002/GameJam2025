@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragonController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DragonController : MonoBehaviour
     [SerializeField] private float dashCooldown = 5f;
 
     private float dashCooldownTimer = 0f;
+
+    public Slider dashCooldownSlider;
 
     void Update()
     {
@@ -35,6 +38,11 @@ public class DragonController : MonoBehaviour
         Vector3 position = transform.position;
         position.y = fixedHeight;
         transform.position = position;
+
+        if (dashCooldownSlider != null)
+        {
+            dashCooldownSlider.value = 1- (dashCooldownTimer / dashCooldown);
+        }
     }
 
     void PerformDash(float direction)

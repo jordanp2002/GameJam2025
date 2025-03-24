@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3633898818073072261}
   m_Layer: 0
   m_Name: EnemyFrigate
-  m_TagString: Untagged
+  m_TagString: EnemyFrigate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  soulPrefab: {fileID: 6031875728269146469, guid: d9e7f85a0eba78647b3c916660ae7eb3, type: 3}
 --- !u!114 &3633898818073072261
 MonoBehaviour:
   m_ObjectHideFlags: 0

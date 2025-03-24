@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 844984187628207574}
   m_Layer: 0
   m_Name: EnemyCorvette
-  m_TagString: Untagged
+  m_TagString: EnemyCorvette
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  soulPrefab: {fileID: 6031875728269146469, guid: d9e7f85a0eba78647b3c916660ae7eb3, type: 3}
 --- !u!1001 &8968514068855030613
 PrefabInstance:
   m_ObjectHideFlags: 0

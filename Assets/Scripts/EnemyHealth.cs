@@ -60,7 +60,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
         GameManager.Instance.AddScore(scoreValue);
 
         DropSoul();
-
+        GameManager.Instance?.EnemyKilled();
         Destroy(gameObject);
     }
 

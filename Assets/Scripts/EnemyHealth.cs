@@ -48,13 +48,13 @@ public class EnemyHealth : MonoBehaviour, IHealth
     {
         int scoreValue = 100;
 
-        if (gameObject.CompareTag("EnemyCorvette"))
+        if (gameObject.CompareTag("Corvette"))
             scoreValue = 500;
-        else if (gameObject.CompareTag("EnemyCruiser"))
+        else if (gameObject.CompareTag("Cruiser"))
             scoreValue = 500;
-        else if (gameObject.CompareTag("EnemyDestroyer"))
+        else if (gameObject.CompareTag("Destroyer"))
             scoreValue = 1000;
-        else if (gameObject.CompareTag("EnemyFrigate"))
+        else if (gameObject.CompareTag("Frigate"))
             scoreValue = 250;
 
         GameManager.Instance.AddScore(scoreValue);

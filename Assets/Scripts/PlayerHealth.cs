@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour, IHealth
@@ -7,10 +8,12 @@ public class PlayerHealth : MonoBehaviour, IHealth
     private float currentHealth;
     private Renderer playerRenderer;
     private Color originalColor;
+    public Slider healthBar;
 
     void Start()
     {
         currentHealth = maxHealth;
+        UpdateHealthBar();
         playerRenderer = GetComponentInChildren<Renderer>();
         if (playerRenderer != null)
         {
@@ -23,6 +26,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
     {
         currentHealth -= damage;
         Debug.Log("You took " + damage + " damage. Remaining health: " + currentHealth);
+        UpdateHealthBar();
 
         if (playerRenderer != null)
         {
@@ -43,6 +47,14 @@ public class PlayerHealth : MonoBehaviour, IHealth
         yield return new WaitForSeconds(0.1f);
         playerRenderer.material.color = originalColor;
         Debug.Log("Flashing back to normal! " + originalColor);
+    }
+
+    void UpdateHealthBar()
+    {
+        if (healthBar != null)
+        {
+            healthBar.value = currentHealth / maxHealth;
+        }
     }
 
     void Die()

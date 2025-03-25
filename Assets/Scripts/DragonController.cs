@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragonController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class DragonController : MonoBehaviour
     private bool touchingLeftWall = false;
     private bool touchingRightWall = false;
     private bool gameStopped = false;
+
+    public Slider dashCooldownSlider;
     void Update()
     {
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
@@ -44,6 +47,11 @@ public class DragonController : MonoBehaviour
         Vector3 position = transform.position;
         position.y = fixedHeight;
         transform.position = position;
+
+        if (dashCooldownSlider != null)
+        {
+            dashCooldownSlider.value = 1 - (dashCooldownTimer / dashCooldown);
+        }
     }
 
     void PerformDash(float direction)

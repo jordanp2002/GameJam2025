@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 130
+  soulPrefab: {fileID: 8382766436265501723, guid: 0677873e5fc2c02449554a3481238a77, type: 3}
 --- !u!114 &2056913950181982917
 MonoBehaviour:
   m_ObjectHideFlags: 0

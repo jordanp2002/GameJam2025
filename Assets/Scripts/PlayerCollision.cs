@@ -10,5 +10,12 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("Player was hit!");
         }
+
+        if (other.CompareTag("Soul"))
+        {
+            Debug.Log("Collected a Soul!");
+            GameManager.Instance.AddScore(100);
+            Destroy(other.gameObject);
+        }
     }
 }

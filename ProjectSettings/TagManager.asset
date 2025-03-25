@@ -8,6 +8,11 @@ TagManager:
   - Left
   - Right
   - End
+  - Corvette
+  - Destroyer
+  - Frigate
+  - Cruiser
+  - Soul
   layers:
   - Default
   - TransparentFX

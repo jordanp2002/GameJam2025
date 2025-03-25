@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3633898818073072261}
   m_Layer: 0
   m_Name: EnemyFrigate
-  m_TagString: Untagged
+  m_TagString: Frigate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  soulPrefab: {fileID: 8382766436265501723, guid: 0677873e5fc2c02449554a3481238a77, type: 3}
 --- !u!114 &3633898818073072261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +126,7 @@ Transform:
   m_GameObject: {fileID: 3357636356202255397}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.101, z: 0}
+  m_LocalPosition: {x: 0, y: 0.101, z: -0.387}
   m_LocalScale: {x: 1.0796626, y: 0.7741736, z: 1.4261053}
   m_ConstrainProportionsScale: 0
   m_Children: []

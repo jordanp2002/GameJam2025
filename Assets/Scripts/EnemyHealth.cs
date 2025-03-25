@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
     private float currentHealth;
     private Renderer enemyRenderer;
     private Color originalColor;
+    public GameObject soulPrefab;
 
     void Start()
 
@@ -45,8 +46,40 @@ public class EnemyHealth : MonoBehaviour, IHealth
 
     void Die()
     {
-        Debug.Log(gameObject.name + " has died!");
-        GameManager.Instance?.EnemyKilled();
-        Destroy(gameObject); // Remove later for death animations
+        int scoreValue = 100;
+
+        if (gameObject.CompareTag("EnemyCorvette"))
+            scoreValue = 500;
+        else if (gameObject.CompareTag("EnemyCruiser"))
+            scoreValue = 500;
+        else if (gameObject.CompareTag("EnemyDestroyer"))
+            scoreValue = 1000;
+        else if (gameObject.CompareTag("EnemyFrigate"))
+            scoreValue = 250;
+
+        GameManager.Instance.AddScore(scoreValue);
+
+        DropSoul();
+
+        Destroy(gameObject);
+    }
+
+    void DropSoul()
+    {
+        int soulCount = 1;
+
+        if (gameObject.CompareTag("Corvette") || gameObject.CompareTag("Destroyer") || gameObject.CompareTag("Frigate"))
+            soulCount = Random.Range(2, 11);
+        else if (gameObject.CompareTag("Cruiser"))
+            soulCount = Random.Range(11, 21);
+
+        float spawnRadius = 1.5f;
+
+        for (int i = 0; i < soulCount; i++)
+        {
+            Vector3 offset = Random.insideUnitSphere * spawnRadius;
+            offset.y = 0;
+            Instantiate(soulPrefab, transform.position + offset, Quaternion.identity);
+        }
     }
 }

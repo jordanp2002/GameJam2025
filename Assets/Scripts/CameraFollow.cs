@@ -2,29 +2,31 @@ using UnityEngine;
 
 public class TopDownCamera : MonoBehaviour
 {
-    [SerializeField] private Transform target;  
     [SerializeField] private float height = 10f;
-    [SerializeField] private float followSpeed = 10f;
-    [SerializeField] private float fixedX = 0f;
-
     [SerializeField] private float zOffset = 50f;
 
-    void Start()
-    {
-        if (target != null)
-            fixedX = transform.position.x;  
-    }
+    // Define the bounds
+    //[SerializeField] private float minX = -4f;
+    //[SerializeField] private float maxX = 4f;
+    //[SerializeField] private float minZ = -4f;
+    //[SerializeField] private float maxZ = 4f;
+
+    // Define the forward speed
+    [SerializeField] private float forwardSpeed = 5f;
 
     void LateUpdate()
     {
-        if (target == null) return;
         Vector3 desiredPosition = new Vector3(
-            fixedX,
-            target.position.y + height,
-            target.position.z + zOffset
+            transform.position.x,
+            height,
+            transform.position.z + forwardSpeed * Time.deltaTime
         );
 
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, followSpeed * Time.deltaTime);
+        // Clamp the desired position to stay within bounds
+        //desiredPosition.x = Mathf.Clamp(desiredPosition.x, minX, maxX);
+        //desiredPosition.z = Mathf.Clamp(desiredPosition.z, minZ, maxZ);
+
+        transform.position = desiredPosition;
         transform.rotation = Quaternion.Euler(90f, 0f, 0f);
     }
 }

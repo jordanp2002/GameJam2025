@@ -647,11 +647,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53783033cd58cf4da05b1f1b8fa1403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1923372561}
   height: 30
-  followSpeed: 5
-  fixedX: 0
   zOffset: 10
+  forwardSpeed: 5
 --- !u!1 &768940861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,12 +1871,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54bdd19a61087e458518cb9cbd93cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 5
   horizontalSpeed: 20
-  fixedHeight: 5
+  verticalSpeed: 20
   dashDistance: 5
   dashCooldown: 3
-  dashCooldownSlider: {fileID: 0}
+  dashCooldownSlider: {fileID: 249675196}
 --- !u!65 &1923372566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1922,7 +1919,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -2256,6 +2253,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4352236687444000146, guid: cf3ff07427e37f540abd8a937e1d3376, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 2107715415}
     - target: {fileID: 6581306701058504784, guid: cf3ff07427e37f540abd8a937e1d3376, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2266,7 +2267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7562609948155447218, guid: cf3ff07427e37f540abd8a937e1d3376, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.623
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7562609948155447218, guid: cf3ff07427e37f540abd8a937e1d3376, type: 3}
       propertyPath: m_LocalPosition.z

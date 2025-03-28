@@ -2,11 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DragonController : MonoBehaviour
-{
-
-    [SerializeField] private float forwardSpeed = 5f;
+{ 
     [SerializeField] private float horizontalSpeed = 10f;
-    [SerializeField] private float fixedHeight = 1f;
+    [SerializeField] private float verticalSpeed = 5f;
 
     [SerializeField] private float dashDistance = 5f;
     [SerializeField] private float dashCooldown = 5f;
@@ -18,19 +16,30 @@ public class DragonController : MonoBehaviour
     private bool gameStopped = false;
 
     public Slider dashCooldownSlider;
+
     void Update()
     {
-        transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
-
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-
+        float verticalInput = Input.GetAxisRaw("Vertical");
 
         if ((horizontalInput < 0 && touchingLeftWall) || (horizontalInput > 0 && touchingRightWall))
         {
             horizontalInput = 0;
         }
-        Vector3 move = new Vector3(horizontalInput * horizontalSpeed * Time.deltaTime, 0f, 0f);
+
+        Vector3 move = new Vector3(horizontalInput * horizontalSpeed * Time.deltaTime, 0f, verticalInput * verticalSpeed * Time.deltaTime);
         transform.Translate(move, Space.World);
+
+        // Clamp the dragon's position within the camera's bounds
+        Vector3 clampedPosition = transform.position;
+        Camera mainCamera = Camera.main;
+        float cameraHeight = 2f * mainCamera.orthographicSize * 2;
+        float cameraWidth = cameraHeight * mainCamera.aspect * 2;
+
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, mainCamera.transform.position.x - cameraWidth / 2, mainCamera.transform.position.x + cameraWidth / 2);
+        clampedPosition.z = Mathf.Clamp(clampedPosition.z, mainCamera.transform.position.z - cameraHeight / 2, mainCamera.transform.position.z + cameraHeight / 2);
+
+        transform.position = clampedPosition;
 
         // Handle Dash
         if (dashCooldownTimer > 0f)
@@ -42,11 +51,6 @@ public class DragonController : MonoBehaviour
         {
             PerformDash(horizontalInput);
         }
-
-        // Lock the dragon's height
-        Vector3 position = transform.position;
-        position.y = fixedHeight;
-        transform.position = position;
 
         if (dashCooldownSlider != null)
         {
@@ -76,6 +80,7 @@ public class DragonController : MonoBehaviour
             Debug.Log("Reached the end! Game Over!");
         }
     }
+
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Left"))

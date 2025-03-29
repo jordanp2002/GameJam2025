@@ -26,6 +26,12 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (CompareTag("DragonProjectile") && other.CompareTag("Player"))
+        {
+            Debug.Log("Ignored collision with dragon's own projectile");
+            return;
+        }
+
         if (other.CompareTag("Enemy"))
         {
             Debug.Log("Hit an enemy!");

@@ -17,5 +17,11 @@ public class PlayerCollision : MonoBehaviour
             GameManager.Instance.AddScore(100);
             Destroy(other.gameObject);
         }
+
+        if (other.CompareTag("DragonProjectile"))
+        {
+            Debug.Log("Ignored collision with projectile");
+            return;
+        }
     }
 }

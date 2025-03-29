@@ -3,9 +3,9 @@ using UnityEngine;
 public class SoulPickup : MonoBehaviour
 {
     public int soulValue = 50;
-    public float attractRange = 10f;
-    public float moveSpeed = 2f;
-    public float maxSpeed = 8f;
+    public float attractRange = 15f;
+    public float moveSpeed = 4f;
+    public float maxSpeed = 10f;
 
     private Transform player;
 

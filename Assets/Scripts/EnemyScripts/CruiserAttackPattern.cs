@@ -5,7 +5,7 @@ public class CruiserAttackPattern : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint1;
     public Transform firePoint2;
-    public float fireRate = 1f;
+    public float fireRate = 2f;
     public float projectileSpeed = 10f;
     private float nextFireTime = 0f;
     private Renderer rend;

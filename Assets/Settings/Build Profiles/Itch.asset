@@ -19,14 +19,26 @@ MonoBehaviour:
   m_PlatformBuildProfile:
     rid: 2586905889502920704
   m_OverrideGlobalSceneList: 1
-  m_Scenes: []
+  m_Scenes:
+  - m_enabled: 1
+    m_path: Assets/Art/Scenes/MainMenu.unity
+  - m_enabled: 1
+    m_path: Assets/Art/Scenes/Level 1.unity
+  - m_enabled: 1
+    m_path: Assets/Art/Scenes/Level 2.unity
+  - m_enabled: 1
+    m_path: Assets/Art/Scenes/Level 3.unity
+  - m_enabled: 1
+    m_path: Assets/Art/Scenes/TransitionScene.unity
+  - m_enabled: 1
+    m_path: Assets/Art/Scenes/GameOver.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
     - line: '| PlayerSettings:'
     - line: '|   m_ObjectHideFlags: 0'
     - line: '|   serializedVersion: 28'
-    - line: '|   productGUID: 1a630ec82d394be4d869dcb805858939'
+    - line: '|   productGUID: 941a9f6627e33c14686655ab4caf4304'
     - line: '|   AndroidProfiler: 0'
     - line: '|   AndroidFilterTouchesWhenObscured: 0'
     - line: '|   AndroidEnableSustainedPerformanceMode: 0'
@@ -68,7 +80,7 @@ MonoBehaviour:
     - line: '|   defaultScreenWidth: 1024'
     - line: '|   defaultScreenHeight: 768'
     - line: '|   defaultScreenWidthWeb: 960'
-    - line: '|   defaultScreenHeightWeb: 540'
+    - line: '|   defaultScreenHeightWeb: 600'
     - line: '|   m_StereoRenderingPath: 0'
     - line: '|   m_ActiveColorSpace: 1'
     - line: '|   unsupportedMSAAFallback: 0'
@@ -163,7 +175,7 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 1.0.0'
+    - line: '|   bundleVersion: 0.1.0'
     - line: '|   preloadedAssets: []'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
@@ -556,11 +568,7 @@ MonoBehaviour:
     - line: '|   openGLRequireES31: 0'
     - line: '|   openGLRequireES31AEP: 0'
     - line: '|   openGLRequireES32: 0'
-    - line: '|   m_TemplateCustomTags:'
-    - line: '|     BACKGROUND: ''#000'''
-    - line: '|     OPTIMIZE_FOR_PIXEL_ART: false'
-    - line: '|     PRODUCT_DESCRIPTION: '
-    - line: '|     SCALE_TO_FIT: false'
+    - line: '|   m_TemplateCustomTags: {}'
     - line: '|   mobileMTRendering:'
     - line: '|     Android: 1'
     - line: '|     iPhone: 1'
@@ -826,7 +834,7 @@ MonoBehaviour:
     - line: '|   webGLDebugSymbols: 0'
     - line: '|   webGLEmscriptenArgs: '
     - line: '|   webGLModulesDirectory: '
-    - line: '|   webGLTemplate: PROJECT:BetterMinimalWebGL'
+    - line: '|   webGLTemplate: APPLICATION:Default'
     - line: '|   webGLAnalyzeBuildSize: 0'
     - line: '|   webGLUseEmbeddedResources: 0'
     - line: '|   webGLCompressionFormat: 0'
@@ -846,24 +854,7 @@ MonoBehaviour:
     - line: '|   webGLWebAssemblyBigInt: 0'
     - line: '|   webGLCloseOnQuit: 0'
     - line: '|   webWasm2023: 0'
-    - line: '|   scriptingDefineSymbols:'
-    - line: '|     Android: DOTWEEN'
-    - line: '|     EmbeddedLinux: DOTWEEN'
-    - line: '|     GameCoreScarlett: DOTWEEN'
-    - line: '|     GameCoreXboxOne: DOTWEEN'
-    - line: '|     LinuxHeadlessSimulation: DOTWEEN'
-    - line: '|     Nintendo Switch: DOTWEEN'
-    - line: '|     PS4: DOTWEEN'
-    - line: '|     PS5: DOTWEEN'
-    - line: '|     QNX: DOTWEEN'
-    - line: '|     ReservedCFE: DOTWEEN'
-    - line: '|     Standalone: DOTWEEN'
-    - line: '|     VisionOS: DOTWEEN'
-    - line: '|     WebGL: DOTWEEN'
-    - line: '|     Windows Store Apps: DOTWEEN'
-    - line: '|     XboxOne: DOTWEEN'
-    - line: '|     iPhone: DOTWEEN'
-    - line: '|     tvOS: DOTWEEN'
+    - line: '|   scriptingDefineSymbols: {}'
     - line: '|   additionalCompilerArguments: {}'
     - line: '|   platformArchitecture: {}'
     - line: '|   scriptingBackend:'
@@ -899,14 +890,14 @@ MonoBehaviour:
     - line: '|   editorAssembliesCompatibilityLevel: 1'
     - line: '|   m_RenderingPath: 1'
     - line: '|   m_MobileRenderingPath: 1'
-    - line: '|   metroPackageName: Breakout 3D'
+    - line: '|   metroPackageName: GameJam'
     - line: '|   metroPackageVersion: '
     - line: '|   metroCertificatePath: '
     - line: '|   metroCertificatePassword: '
     - line: '|   metroCertificateSubject: '
     - line: '|   metroCertificateIssuer: '
     - line: '|   metroCertificateNotAfter: 0000000000000000'
-    - line: '|   metroApplicationDescription: Breakout 3D'
+    - line: '|   metroApplicationDescription: GameJam'
     - line: '|   wsaImages: {}'
     - line: '|   metroTileShortName: '
     - line: '|   metroTileShowName: 0'

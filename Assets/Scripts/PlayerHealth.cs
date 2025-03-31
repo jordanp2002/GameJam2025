@@ -4,12 +4,24 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour, IHealth
 {
-    public float maxHealth = 100f;
-    private float currentHealth;
+    public static PlayerHealth Instance;
+    public float maxHealth = 200f;
+    public float currentHealth;
     private Renderer playerRenderer;
     private Color originalColor;
     public Slider healthBar;
-
+    public float damageResistance = 0f;
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         currentHealth = maxHealth;
@@ -18,14 +30,16 @@ public class PlayerHealth : MonoBehaviour, IHealth
         if (playerRenderer != null)
         {
             Debug.Log("Setting original color!");
+            Debug.Log("Current Health" + currentHealth);
             originalColor = playerRenderer.material.color;
         }
     }
 
     public void TakeDamage(float damage, GameObject source)
     {
-        currentHealth -= damage;
-        Debug.Log("You took " + damage + " damage. Remaining health: " + currentHealth);
+        float reducedDamage = damage * (1f - damageResistance);
+        currentHealth -= reducedDamage;
+        Debug.Log($"You took {reducedDamage} damage (original {damage} reduced by {damageResistance:P}). Remaining health: {currentHealth}");
         UpdateHealthBar();
 
         if (playerRenderer != null)
@@ -49,17 +63,18 @@ public class PlayerHealth : MonoBehaviour, IHealth
         Debug.Log("Flashing back to normal! " + originalColor);
     }
 
-    void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         if (healthBar != null)
         {
             healthBar.value = currentHealth / maxHealth;
         }
     }
-
+    
     void Die()
     {
-        Debug.Log(gameObject.name + " has died!");
-        Destroy(gameObject); // Remove later for death animations
+        Debug.Log("Dragon has died!");
+        GameManager.Instance.EndGame();
+        Destroy(gameObject); 
     }
 }

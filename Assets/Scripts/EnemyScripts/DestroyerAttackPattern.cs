@@ -4,7 +4,7 @@ public class DestroyerAttackPattern : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Transform firePoint;
-    public float fireRate = 2f;
+    public float fireRate = 3f;
     public float spreadAngle = 15f;
     public float projectileSpeed = 10f;
     private float nextFireTime = 0f;

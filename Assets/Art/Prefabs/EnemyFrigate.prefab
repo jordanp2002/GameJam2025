@@ -70,6 +70,7 @@ MonoBehaviour:
   burstDelay: 0.1
   burstCount: 3
   projectileSpeed: 7
+  shootSound: {fileID: 8300000, guid: 346a73f6f4c6cfb4e90dba2fa3c55d52, type: 3}
 --- !u!1 &2026050788937942074
 GameObject:
   m_ObjectHideFlags: 0

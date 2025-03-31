@@ -4,7 +4,7 @@ public class CorvetteAttackPattern : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Transform firePoint;
-    public float fireRate = 1f;
+    public float fireRate = 4f;
     public float projectileSpeed = 10f;
     private Transform player;
     private float nextFireTime = 0f;

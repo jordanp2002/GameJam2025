@@ -122,6 +122,7 @@ MonoBehaviour:
   fireRate: 2
   spreadAngle: 10
   projectileSpeed: 4
+  shootSound: {fileID: 8300000, guid: b22c1885843c6a64c925d62a37d65676, type: 3}
 --- !u!1 &7604279763643284659
 GameObject:
   m_ObjectHideFlags: 0

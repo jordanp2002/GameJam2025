@@ -149,6 +149,7 @@ MonoBehaviour:
   firePoint: {fileID: 6960769235123193434}
   fireRate: 2
   projectileSpeed: 6
+  shootSound: {fileID: 8300000, guid: 346a73f6f4c6cfb4e90dba2fa3c55d52, type: 3}
 --- !u!114 &844984187628207574
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,10 +9,14 @@ public class DragonProjectile : MonoBehaviour
     public float baseSpeed = 10f;
     public float lifetime = 5f;
 
+    [SerializeField] private AudioClip shootSound;
+    private AudioSource audioSource;
+
     void Start(){
         float damage = baseDamage * damageMultiplier;
         float speed = baseSpeed * speedMultiplier;
 
+        audioSource = GetComponent<AudioSource>();
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null){
             rb.linearVelocity = transform.forward * speed;

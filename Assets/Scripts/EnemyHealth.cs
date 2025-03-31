@@ -9,8 +9,11 @@ public class EnemyHealth : MonoBehaviour, IHealth
     private Color originalColor;
     public GameObject soulPrefab;
 
-    void Start()
+    [SerializeField] private GameObject explosionEffect;
+    [SerializeField] private AudioClip explosionSound;
+    private AudioSource audioSource;
 
+    void Start()
     {
         GameManager.Instance?.RegisterEnemy();
         currentHealth = maxHealth;
@@ -58,6 +61,19 @@ public class EnemyHealth : MonoBehaviour, IHealth
             scoreValue = 250;
 
         GameManager.Instance.AddScore(scoreValue);
+
+        // Spawn Particle Explosion
+        if (explosionEffect != null)
+        {
+            GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);    
+            Destroy(explosion, 3f);
+        }
+
+        // Play Sound
+        if (explosionSound != null)
+        {
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+        }
 
         DropSoul();
         GameManager.Instance?.EnemyKilled();

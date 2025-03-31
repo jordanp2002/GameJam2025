@@ -18,5 +18,11 @@ public class PlayerCollision : MonoBehaviour
             DragonController.Instance.AddSoulToDash(0.1f);
             Destroy(other.gameObject);
         }
+
+        if (other.CompareTag("DragonProjectile"))
+        {
+            Debug.Log("Ignored collision with projectile");
+            return;
+        }
     }
 }

@@ -163,6 +163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   soulPrefab: {fileID: 8382766436265501723, guid: 0677873e5fc2c02449554a3481238a77, type: 3}
+  explosionEffect: {fileID: 4079661326636565940, guid: e4d19155cb4e0f542b3afea7b1037d46, type: 3}
+  explosionSound: {fileID: 8300000, guid: e3dd46f70046a90489be62c69d1f9834, type: 3}
 --- !u!1001 &8968514068855030613
 PrefabInstance:
   m_ObjectHideFlags: 0

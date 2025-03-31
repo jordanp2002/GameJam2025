@@ -13,7 +13,9 @@ TagManager:
   - Frigate
   - Cruiser
   - Soul
+  - DragonProjectile
   - SpawnPoint
+
   layers:
   - Default
   - TransparentFX

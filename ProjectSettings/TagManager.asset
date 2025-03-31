@@ -13,6 +13,7 @@ TagManager:
   - Frigate
   - Cruiser
   - Soul
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

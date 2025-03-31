@@ -117,8 +117,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2991211780273612157}
-  - component: {fileID: 4522774360603161058}
   - component: {fileID: 6354302103125683889}
+  - component: {fileID: -6193480374143355697}
   m_Layer: 0
   m_Name: DragonProjectile
   m_TagString: Untagged
@@ -142,21 +142,6 @@ Transform:
   - {fileID: 6520594064851602494}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4522774360603161058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8328094409988945669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93506aa1325415a42ae771ef8e85130c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 25
-  speed: 18
-  lifetime: 5
 --- !u!54 &6354302103125683889
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -184,3 +169,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6193480374143355697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328094409988945669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34a225988776bd44bd990de627437d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  baseSpeed: 10
+  lifetime: 5

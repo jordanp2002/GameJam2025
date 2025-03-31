@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyFrigate (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2944039575437911878, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
+      propertyPath: maxHealth
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6725587461866039617, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.5
@@ -1165,6 +1169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyFrigate (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2944039575437911878, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
+      propertyPath: maxHealth
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6725587461866039617, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.8
@@ -1278,6 +1286,10 @@ PrefabInstance:
     - target: {fileID: 1248139456950574167, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
       propertyPath: m_Name
       value: EnemyFrigate (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944039575437911878, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
+      propertyPath: maxHealth
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6725587461866039617, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1843,6 +1855,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyFrigate
       objectReference: {fileID: 0}
+    - target: {fileID: 2944039575437911878, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
+      propertyPath: maxHealth
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6725587461866039617, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.1
@@ -2082,6 +2098,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 844984187628207574, guid: 8c555b92dd5e86a4099971f215795812, type: 3}
+      propertyPath: maxHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5974141211930339293, guid: 8c555b92dd5e86a4099971f215795812, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12
@@ -2199,6 +2219,10 @@ PrefabInstance:
     - target: {fileID: 1248139456950574167, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
       propertyPath: m_Name
       value: EnemyFrigate (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944039575437911878, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
+      propertyPath: maxHealth
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6725587461866039617, guid: 44c291565eddb2647b36eeffaf574848, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2433,6 +2457,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4944850640191276526, guid: f82330e9be5ea4547a5ece81a1460ae6, type: 3}
+      propertyPath: maxHealth
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6654141767146830371, guid: f82330e9be5ea4547a5ece81a1460ae6, type: 3}
       propertyPath: m_Name
       value: EnemyCruiser

@@ -1,21 +1,32 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class DragonController : MonoBehaviour
-{ 
+{
+    public static DragonController Instance;
+
     [SerializeField] private float horizontalSpeed = 10f;
     [SerializeField] private float verticalSpeed = 5f;
 
     [SerializeField] private float dashDistance = 5f;
-    [SerializeField] private float dashCooldown = 5f;
-
-    private float dashCooldownTimer = 0f;
+    [SerializeField] public float dashMeter = 1f;
+    public float maxStamina = 1f;
 
     private bool touchingLeftWall = false;
     private bool touchingRightWall = false;
-    private bool gameStopped = false;
+    public Slider dashMeterSlider;
 
-    public Slider dashCooldownSlider;
+    private void Awake()
+    {
+        Instance = this;
+    }
+    void Start()
+    {
+        PowerUpManager.Instance.ApplyAllPowerUps();
+        dashMeterSlider.minValue = 0f;
+        dashMeterSlider.maxValue = maxStamina;
+        dashMeterSlider.value = dashMeter;
+    }
 
     void Update()
     {
@@ -30,7 +41,6 @@ public class DragonController : MonoBehaviour
         Vector3 move = new Vector3(horizontalInput * horizontalSpeed * Time.deltaTime, 0f, verticalInput * verticalSpeed * Time.deltaTime);
         transform.Translate(move, Space.World);
 
-        // Clamp the dragon's position within the camera's bounds
         Vector3 clampedPosition = transform.position;
         Camera mainCamera = Camera.main;
         float cameraHeight = 2f * mainCamera.orthographicSize * 2;
@@ -41,46 +51,63 @@ public class DragonController : MonoBehaviour
 
         transform.position = clampedPosition;
 
-        // Handle Dash
-        if (dashCooldownTimer > 0f)
-        {
-            dashCooldownTimer -= Time.deltaTime;
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTimer <= 0f)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashMeter >= maxStamina)
         {
             PerformDash(horizontalInput);
         }
 
-        if (dashCooldownSlider != null)
+        if (dashMeterSlider != null)
         {
-            dashCooldownSlider.value = 1 - (dashCooldownTimer / dashCooldown);
+            dashMeterSlider.value = dashMeter;
         }
     }
-
-    void PerformDash(float direction)
-    {
+    public void ResetStaminaModifiers(){
+        maxStamina = 1f; 
+        dashMeter = maxStamina;
+        if (dashMeterSlider != null)
+        {
+            dashMeterSlider.maxValue = maxStamina;
+            dashMeterSlider.value = dashMeter;
+        }
+        Debug.Log("Stamina Reset To Default");
+    }
+    void PerformDash(float direction){
         if (direction == 0f)
             direction = 1f;
         if ((direction < 0 && touchingLeftWall) || (direction > 0 && touchingRightWall))
             return;
         transform.Translate(Vector3.right * direction * dashDistance, Space.World);
-        dashCooldownTimer = dashCooldown;
+        dashMeter = 0f;
+        if (dashMeterSlider) dashMeterSlider.value = dashMeter;
     }
-
+    public void AddSoulToDash(float amount){
+        dashMeter += amount;
+        Debug.Log("Soul collected, dashMeter now: " + dashMeter);
+        if (dashMeter > maxStamina)
+            dashMeter = maxStamina;
+        if (dashMeterSlider) dashMeterSlider.value = dashMeter;
+    }
+    public void ReduceMaxStamina(float factor){
+        maxStamina -= factor;
+        if (dashMeter > maxStamina)
+            dashMeter = maxStamina;
+        if (dashMeterSlider){
+            dashMeterSlider.maxValue = maxStamina;
+            dashMeterSlider.value = dashMeter;
+        }
+        Debug.Log($"New maxStamina: {maxStamina}, current dashMeter: {dashMeter}");
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Left"))
             touchingLeftWall = true;
         else if (other.CompareTag("Right"))
             touchingRightWall = true;
-        else if (other.CompareTag("End"))
-        {
-            gameStopped = true;
-            Debug.Log("Reached the end! Game Over!");
+        if (other.CompareTag("End")){
+            GameManager.Instance.SetLastCompletedLevel(SceneManager.GetActiveScene().buildIndex);
+            GameManager.Instance.EndLevel();
         }
     }
-
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Left"))

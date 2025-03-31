@@ -15,6 +15,7 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("Collected a Soul!");
             GameManager.Instance.AddScore(100);
+            DragonController.Instance.AddSoulToDash(0.1f);
             Destroy(other.gameObject);
         }
 

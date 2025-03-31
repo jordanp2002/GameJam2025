@@ -86,6 +86,7 @@ public class DragonController : MonoBehaviour
         if (dashMeter > maxStamina)
             dashMeter = maxStamina;
         if (dashMeterSlider) dashMeterSlider.value = dashMeter;
+        Debug.Log("DragonController AddSoulToDash: Added " + amount + ". New dashMeter = " + dashMeter);
     }
     public void ReduceMaxStamina(float factor){
         maxStamina -= factor;

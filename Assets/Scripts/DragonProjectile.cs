@@ -21,6 +21,8 @@ public class DragonProjectile : MonoBehaviour
         if (rb != null){
             rb.linearVelocity = transform.forward * speed;
         }
+        Debug.Log("Applied multipliers: speedMultiplier = " + speedMultiplier + ", damageMultiplier = " + damageMultiplier);
+        Debug.Log("Values speed = " + speed + ", damage = " + damage);
 
         Destroy(gameObject, lifetime);
     }
@@ -29,11 +31,13 @@ public class DragonProjectile : MonoBehaviour
         if (targetHealth != null){
             float damage = baseDamage * damageMultiplier;
             targetHealth.TakeDamage(damage, gameObject);
+            Debug.Log("DragonProjectile hit target; applied damage = " + damage);
             Destroy(gameObject);
         }
     }
     public static void ResetModifiers(){
         speedMultiplier = 1f;
         damageMultiplier = 1f;
+        Debug.Log("DragonProjectile modifiers reset: speedMultiplier = " + speedMultiplier + ", damageMultiplier = " + damageMultiplier);
     }
 }

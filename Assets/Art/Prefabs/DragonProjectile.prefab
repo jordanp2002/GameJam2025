@@ -212,7 +212,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2991211780273612157}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1625254132622798948
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

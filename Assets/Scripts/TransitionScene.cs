@@ -29,6 +29,10 @@ public class TransitionScene : MonoBehaviour
         SetPowerUpButton(powerUpPanel3, powerUpButton3, powerUpText3, currentChoices[2]);
     }
     void SetPowerUpButton(GameObject panel, Button button, TextMeshProUGUI text,PowerUp powerUp){
+        if (powerUp == null){
+            Debug.LogError("PowerUp asset is null in SetPowerUpButton");
+            return;
+        }
         panel.SetActive(true);
         text.text = powerUp.powerUpName;
         button.onClick.RemoveAllListeners();
@@ -36,6 +40,10 @@ public class TransitionScene : MonoBehaviour
     }
 
     void SelectPowerUp(PowerUp selectedPowerUp){
+        if (selectedPowerUp == null){
+            Debug.LogError("Selected power-up is null");
+            return;
+        }
         PowerUpManager.Instance.ApplyPowerUp(selectedPowerUp);
         Debug.Log("Selected Power-Up: " + selectedPowerUp.powerUpName);
         LoadNextLevel();  
@@ -53,7 +61,6 @@ public class TransitionScene : MonoBehaviour
         else{
             nextSceneIndex = currentSceneIndex + 1;
         }
-
         StartCoroutine(LoadLevelAsync(nextSceneIndex));
     }
     IEnumerator LoadLevelAsync(int sceneIndex){

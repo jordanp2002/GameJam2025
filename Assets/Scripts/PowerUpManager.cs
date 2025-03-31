@@ -50,8 +50,17 @@ public class PowerUpManager : MonoBehaviour
     }
 
     public void ApplyPowerUp(PowerUp powerUp){
+        if (powerUp == null){
+            Debug.LogError("ApplyPowerUp received a null power-up!");
+            return;
+        }
         activePowerUps.Add(powerUp);
-        ActivePowerUps.instance.UpdateDisplay();
+        if (ActivePowerUps.instance != null){
+            ActivePowerUps.instance.UpdateDisplay();
+        }
+        else{
+            Debug.Log("ActivePowerUps is Null");
+        }
         ApplyAllPowerUps();
     }
     public List<PowerUp> GetActivePowerUps(){
@@ -67,6 +76,7 @@ public class PowerUpManager : MonoBehaviour
                     break;
                 case PowerUp.PowerUpType.ProjectileMod2:
                     DragonProjectile.speedMultiplier *= 1.08f;
+
                     break;
                 case PowerUp.PowerUpType.ProjectileMod3:
                     DragonProjectile.damageMultiplier *= 1.05f;

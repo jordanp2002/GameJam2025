@@ -7,7 +7,6 @@ public class Projectile : MonoBehaviour
     public float speed = 10f;
 
     public float lifetime = 5f;
-
     void Start()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -23,7 +22,16 @@ public class Projectile : MonoBehaviour
 
         Destroy(gameObject, lifetime);
     }
-
+    void Update()
+    {
+        if (Camera.main == null)
+            return;
+        Vector3 viewportPos = Camera.main.WorldToViewportPoint(transform.position);
+        if (viewportPos.x < 0f || viewportPos.x > 1f || viewportPos.y < 0f || viewportPos.y > 1f){
+            Debug.Log("Destroyed Enemy Projectile");
+            Destroy(gameObject);
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
         if (CompareTag("DragonProjectile") && other.CompareTag("Player"))

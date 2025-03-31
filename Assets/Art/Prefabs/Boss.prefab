@@ -153,6 +153,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd41947336e996140a4d192ef6948313, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3632276153619558108}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd41947336e996140a4d192ef6948313, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7359701253261994783}
   m_SourcePrefab: {fileID: 100100000, guid: fd41947336e996140a4d192ef6948313, type: 3}
 --- !u!1 &387345954121487188 stripped
 GameObject:
@@ -177,6 +180,22 @@ MonoBehaviour:
   circularProjectileCount: 12
   circularSpreadRadius: 5
   projectileSpeed: 10
+--- !u!114 &-7359701253261994783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387345954121487188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e71d471528cbe343b17286a372064ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 300
+  soulPrefab: {fileID: 8382766436265501723, guid: 0677873e5fc2c02449554a3481238a77, type: 3}
+  explosionEffect: {fileID: 0}
+  explosionSound: {fileID: 0}
 --- !u!4 &1021175527234914798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fd41947336e996140a4d192ef6948313, type: 3}

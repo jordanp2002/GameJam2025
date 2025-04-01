@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour, IHealth
 {
@@ -59,13 +60,33 @@ public class EnemyHealth : MonoBehaviour, IHealth
             scoreValue = 1000;
         else if (gameObject.CompareTag("Frigate"))
             scoreValue = 250;
+        else if (gameObject.CompareTag("Boss"))
+        {
+            scoreValue = 5000;
+            GameManager.Instance.AddScore(scoreValue);
+
+            // Spawn Particle Explosion
+            if (explosionEffect != null)
+            {
+                GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+                Destroy(explosion, 3f);
+            }
+
+            // Play Sound
+            if (explosionSound != null)
+            {
+                AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+            }
+
+            StartCoroutine(DelayedEndLevel());
+        }
 
         GameManager.Instance.AddScore(scoreValue);
 
         // Spawn Particle Explosion
         if (explosionEffect != null)
         {
-            GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);    
+            GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(explosion, 3f);
         }
 
@@ -78,6 +99,13 @@ public class EnemyHealth : MonoBehaviour, IHealth
         DropSoul();
         GameManager.Instance?.EnemyKilled();
         Destroy(gameObject);
+    }
+
+    IEnumerator DelayedEndLevel()
+    {
+        yield return new WaitForSeconds(4f);
+        GameManager.Instance.SetLastCompletedLevel(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Instance.EndLevel();
     }
 
     void DropSoul()

@@ -104,7 +104,17 @@ public class DragonController : MonoBehaviour
             touchingLeftWall = true;
         else if (other.CompareTag("Right"))
             touchingRightWall = true;
-        if (other.CompareTag("End")){
+        else if (other.CompareTag("BossWall"))
+        {
+            TopDownCamera camera = Camera.main.GetComponent<TopDownCamera>();
+            if (camera != null)
+            {
+                Debug.Log("Player hit the boss wall. Stopping camera movement.");
+                camera.StopCameraMovement();
+            }
+        }
+        else if (other.CompareTag("End"))
+        {
             GameManager.Instance.SetLastCompletedLevel(SceneManager.GetActiveScene().buildIndex);
             GameManager.Instance.EndLevel();
         }

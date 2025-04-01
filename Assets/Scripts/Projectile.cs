@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
     public float damage = 10f;
     public float speed = 10f;
     public float lifetime = 5f;
+    public GameObject source;
     void Start()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -33,6 +34,12 @@ public class Projectile : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject == source)
+        {
+            Debug.Log("Ignored collision with source");
+            return;
+        }
+
         if (CompareTag("DragonProjectile") && other.CompareTag("Player"))
         {
             Debug.Log("Ignored collision with dragon's own projectile");
@@ -48,7 +55,7 @@ public class Projectile : MonoBehaviour
 
         if (targetHealth != null)
         {
-            targetHealth.TakeDamage(damage, gameObject);
+            targetHealth.TakeDamage(damage, source);
             Destroy(gameObject);
         }
     }

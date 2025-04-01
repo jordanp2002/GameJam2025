@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections;
-
 public class BossScript : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
@@ -12,7 +10,6 @@ public class BossScript : MonoBehaviour
 
     private Renderer rend;
     private Transform player;
-    private bool hasSeenPlayer = false;
 
     void Start()
     {

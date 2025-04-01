@@ -22,5 +22,19 @@ https://jordanp2002.itch.io/gamejam2025
 
 ## Assests Used
 
-https://kenney.nl/assets/ui-pack-sci-fi
-https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633
+UI: https://kenney.nl/assets/ui-pack-sci-fi
+
+Sky: https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633
+
+Music: https://pixabay.com/music/search/genre/video%20games/
+
+Boss: https://sketchfab.com/3d-models/mechanical-spider-87e0a94c2e1f44b5b5c9d088f4d5f4ab
+
+Enemies: https://opengameart.org/content/spaceships-6
+
+Dragon: https://sketchfab.com/3d-models/dragon-rigged-97245a2528b34abdb1fb11088691dfae
+
+dragon projectile sfx: https://cdn.pixabay.com/download/audio/2025/03/22/audio_a0ad187792.mp3?filename=short-fire-whoosh_1-317280.mp3
+
+fireball model: https://sketchfab.com/search?category=science-technology&type=models
+

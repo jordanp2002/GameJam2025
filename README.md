@@ -19,3 +19,8 @@ Here is how it works:
 ## Check it out on itch.io:
 
 https://jordanp2002.itch.io/gamejam2025
+
+##Assests Used
+
+https://kenney.nl/assets/ui-pack-sci-fi
+https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633

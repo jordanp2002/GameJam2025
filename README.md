@@ -16,3 +16,6 @@ Here is how it works:
 - After defeating level 3 , its a never ending cycle of levels and boss battles until you finally go down.
 - Your goal is to elimate as many aliens as possible and achieve the highest score good luck!
   
+## Check it out on itch.io:
+
+https://jordanp2002.itch.io/gamejam2025

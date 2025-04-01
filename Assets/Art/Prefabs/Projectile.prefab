@@ -338,6 +338,7 @@ MonoBehaviour:
   damage: 10
   speed: 18
   lifetime: 5
+  source: {fileID: 8328094409988945669}
 --- !u!54 &6354302103125683889
 Rigidbody:
   m_ObjectHideFlags: 0

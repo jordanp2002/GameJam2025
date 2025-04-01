@@ -78,7 +78,8 @@ public class EnemyHealth : MonoBehaviour, IHealth
                 AudioSource.PlayClipAtPoint(explosionSound, transform.position);
             }
 
-            StartCoroutine(DelayedEndLevel());
+            GameManager.Instance.SetLastCompletedLevel(SceneManager.GetActiveScene().buildIndex);
+            GameManager.Instance.EndLevel();
         }
 
         GameManager.Instance.AddScore(scoreValue);
@@ -99,13 +100,6 @@ public class EnemyHealth : MonoBehaviour, IHealth
         DropSoul();
         GameManager.Instance?.EnemyKilled();
         Destroy(gameObject);
-    }
-
-    IEnumerator DelayedEndLevel()
-    {
-        yield return new WaitForSeconds(4f);
-        GameManager.Instance.SetLastCompletedLevel(SceneManager.GetActiveScene().buildIndex);
-        GameManager.Instance.EndLevel();
     }
 
     void DropSoul()
